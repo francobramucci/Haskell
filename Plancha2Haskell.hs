@@ -63,13 +63,21 @@ filterEven' (x:xs) = if((mod x 2) == 0) then x : (filterEven' xs) else filterEve
 zip' :: [a] -> [b] -> [(a,b)]
 zip' l [] = []
 zip' [] l = []
-zip' [x] (y:ys) = (x,y) : zip' [x] ys
-zip' (x:xs) (y:ys) = (zip' [x] (y:ys)) ++ (zip' xs (y:ys))
+zip' (x:xs) (y:ys) = (x,y) : zip' xs ys
+
+prodcar :: [a] -> [b] -> [(a,b)]
+prodcar l [] = []
+prodcar [] l = []
+prodcar [x] (y:ys) = (x,y) : prodcar [x] ys
+prodcar (x:xs) (y:ys) = (prodcar [x] (y:ys)) ++ (prodcar xs (y:ys))
 
 singleton' :: a -> [a]
 singleton' x = [x]
 
-
+maxToEnd :: [Int] -> [Int]
+maxToEnd [] = []
+maxToEnd [x] = [x]
+maxToEnd (x:y:xs) = if (x > y) then y: maxToEnd (x:xs) else x: maxToEnd(y:xs)
 
 
 
