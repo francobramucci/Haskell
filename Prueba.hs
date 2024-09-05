@@ -6,7 +6,7 @@
  - b) Para saber cuantos goles metio cada uno de esos tres jugadores se pide ahora definir una función goles3 que dados tres números de camiseta devuelva una tripla
  - con la cantidad correspondiente de goles de cada jugador según el orden en el que fueron pasados a la función.
  -
- - -}
+ -}
 ocurrencias3 :: [Int] -> Int -> Int -> Int -> (Int, Int, Int)
 ocurrencias3 l a b c = foldr (\x (f, s, t) -> if x == a then (f+1, s, t) else if x == b then (f, s+1, t) else if x == c then (f, s, t+1) else (f, s, t)) (0,0,0) l
 
@@ -19,7 +19,8 @@ ocurrencias3 l a b c = foldr (\x (f, s, t) -> if x == a then (f+1, s, t) else if
  - b) La familia quiere calcular por cuantos pueblos podrán pasar con una cierta cantidad de combustible (sin cargar en el camino) 
  - sabiendo que un litro de nafta rinde 10km en la ruta.
  - Definir una función que dada la lista de pueblos y una cantidad de combustible devuelva la cantidad de pueblos por los que pudieron pasar.
- - -}
+ -
+ -}
 
 tomarDescanso :: [(String, Int)] -> String
 tomarDescanso l = let (n, d, k) = foldl (\(s, max, ant) (pueblo, km) -> if km-ant >= max then (pueblo, km-ant, km) else (s, max, km)) ("Origen", 0, 0) l in n
@@ -32,3 +33,23 @@ filterfold f l = foldr (\x ys -> if f x then x:ys else ys) [] l
 {-tomarDescanso :: [(String, Int)] -> Int -> (String, Int, Int)
 tomarDescanso l = let dest = (fst (last l), 0, snd (last l)) in foldr (\(pueblo, km) (s, max, sig) -> if sig-km >= max then (pueblo, sig-km, km) else (s, max, km)) dest l
 -}
+
+{-
+ - 3) Una organización sin fines de lucro quiere hacer un reconocimiento a sus mejores donantes.
+ - La organización cuenta con registros donde se tiene el nombre del donante junto a todas las cantidades de dinero que donó a lo largo del tiempo 
+ - (en orden cronológico).
+ - Para aquellos casos en los que el donante decidió no decir su nombre, se anotó el monto donado en "Anónimo".
+ - a) Diseñar una función que devuelva todos los nombres de aquellas personas que donaron más de un total "d" de dinero. No considerar el nombre "Anónimo" 
+ - Un ejemplo de un registro es:
+ - Juan: 100, 200, 400, 1000, 10.
+ - b) Tras haber obtenido los mejores donantes, la organización quiere ahora invitar al que mayor cantidad donó de ellos para hacerle una distinción excepcional.
+ - Definir una función que devuelva el mayor donante de los previamente elegidos.
+ -
+ -}
+
+
+{- 
+ - Dada una lista de valores booleanos devolver "tautología" si todos los valores son True, "satisfactible" si alguno de los valores es True y "contradicción" 
+ - si todos los valores son falsos.
+ - 
+ -}
