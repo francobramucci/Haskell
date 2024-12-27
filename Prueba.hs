@@ -53,3 +53,24 @@ tomarDescanso l = let dest = (fst (last l), 0, snd (last l)) in foldr (\(pueblo,
  - si todos los valores son falsos.
  - 
  -}
+
+{- 
+ - Tema 1: 
+ - Dos alumnos se infiltraron en la oficina de su profesor para acceder a las planillas de notas de varios exámenes, en cada una de las planillas estaban
+ - las notas que los alumnos habían sacado en el examen correspondiente. Uno de los alumnos quiere categorizar los exámenes del profesor según el siguiente criterio:
+ - Difícil: Si el promedio de notas es menor a 4.
+ - Fácil: Si el promedio de notas es mayor a 8.
+ - Posible: El resto de los casos.
+ - Diseñar una función en Haskell que realice dicha categoría si se tienen las listas de las notas de los alumnos de cada examen.
+ -
+ - Tema 2:
+ - Difícil: Si la cantidad de aprobados es menor a 5.
+ - Fácil: Si la cantidad de aprobados es mayor a 25.
+ - Posible: El resto de los casos.
+ - Diseñar una función en Haskell que realice dicha categoría si se tienen las listas de las notas de los alumnos de cada examen. (Considerando que en cada examen
+ - rindieron 30 alumnos)
+ -}
+
+
+
+
